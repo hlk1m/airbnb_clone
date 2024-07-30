@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="airbnb 클론코딩" />
+    <!-- css -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- Icon -->
+    <script
+      src="https://kit.fontawesome.com/31f273f6bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" defer></script>
+    <title>airbnb</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav class="navbar">
+        <a href="#" class="nav_logo">
+          <i class="fa-brands fa-airbnb"></i><span>airbnb</span>
+        </a>
+        <div class="nav_date">
+          <div class="nav_date_box">
+            <button class="nav_date_box_list">어디든지</button>
+            <button class="nav_date_box_list">언제든 일주일</button>
+            <button class="nav_date_box_list">게스트 추가</button>
+            <button class="nav_list_mobile">언제든 일주일 • 게스트 추가</button>
+          </div>
+          <button class="nav_date_btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button class="nav_filter_btn">
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+        </div>
+        <div class="nav_menu">
+          <button class="nav_menu_space">당신의 공간을 에어비앤비하세요</button
+          ><button class="nav_menu_translate">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <div class="nav_menu_user-box">
+            <i class="fa-solid fa-bars bar"></i>
+            <i class="fa-solid fa-circle-user user"></i>
+          </div>
+        </div>
+      </nav>
+      <!-- category -->
+      <section class="category">
+        <ul class="category_list">
+          <li class="category_item selected">
+            <img
+              class="category_item_img"
+              src="images/pool.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">멋진수영장</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/room.jpg"
+              alt="category_img"
+            />
+
+            <span class="category_item_title">방</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/beach.jpg"
+              alt="category_img"
+            />
+
+            <span class="category_item_title">해변 바로 앞</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/island.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">섬</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/surfing.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">서핑</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/pool.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">수영장</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/contryside.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">한적한 시골</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/public.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">국립 공원</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/hanok.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">한옥</span>
+          </li>
+          <li class="category_item">
+            <img
+              class="category_item_img"
+              src="images/camping.jpg"
+              alt="category_img"
+            />
+            <span class="category_item_title">캠핑장</span>
+          </li>
+        </ul>
+        <div class="category_filter">
+          <button class="category_right_btn">
+            <i class="fa-solid fa-chevron-right"> </i>
+          </button>
+          <button class="category_filter_btn">
+            <i class="fa-solid fa-sliders"></i>필터
+          </button>
+        </div>
+      </section>
+    </header>
+    <!-- main -->
+    <main id="main">
+      <button class="map">지도 표시하기 <i class="fa-solid fa-map"></i></button>
+      <ul class="card-container">
+        <!-- item card -->
+        <!-- <li class="card">
+          <button class="card_heart">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="card_img">
+            <img src="https://picsum.photos/id/22/4434/3729" alt="card_image" />
+            <div class="card_dots">
+              <span class="card_dot_circle circle_select"></span>
+              <span class="card_dot_circle"></span>
+              <span class="card_dot_circle"></span>
+              <span class="card_dot_circle"></span>
+              <span class="card_dot_circle"></span>
+            </div>
+          </div>
+          <div class="card_content">
+            <h3 class="card_title">경주 한국</h3>
+            <div class="card_star"><i class="fa-solid fa-star"></i> 4.5</div>
+            <p class="card_desc">
+              125Km 거리<br />
+              8월 3일~10일<br />
+            </p>
+            <p class="card_amount"><strong>₩181,714</strong>/ 박</p>
+          </div>
+        </li> -->
+      </ul>
+    </main>
+    <footer id="footer">
+      <nav class="info">
+        <ul class="info_list">
+          <li class="info_item">© 2023 Airbnb, Inc.</li>
+          <li class="info_item"><a href="#">개인정보</a> ·</li>
+          <li class="info_item"><a href="#">처리방침</a> ·</li>
+          <li class="info_item"><a href="#">이용약관</a> ·</li>
+          <li class="info_item"><a href="#">사이트맵</a> ·</li>
+          <li class="info_item"><a href="#">한국의 변경된 환불 정책</a> ·</li>
+          <li class="info_item"><a href="#">회사 세부정보 </a></li>
+        </ul>
+        <div class="footer_btns">
+          <button class="footer_btn">
+            <i class="fa-solid fa-globe"></i>
+            한국어 (KR)
+          </button>
+          <button class="footer_btn">
+            <i class="fa-solid fa-won-sign"></i>
+            KRW
+          </button>
+          <button class="footer_btn">
+            지원 및 참고 자료
+            <i class="fa-solid fa-chevron-up"></i>
+          </button>
+        </div>
+      </nav>
+      <p class="info_description">
+        웹사이트 제공자: Airbnb Ireland UC, private unlimited company, 8 Hanover
+        Quay Dublin 2, D02 DP23 Ireland | 이사: Dermot Clarke, Killian Pattwell,
+        Andrea Finnegan | VAT 번호: IE9827384L | 사업자 등록 번호: IE 511825 |
+        연락처: terms@airbnb.com, 웹사이트, 080-822-0230 | 호스팅 서비스
+        제공업체: 아마존 웹서비스 | 에어비앤비는 통신판매 중개자로 에어비앤비
+        플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가
+        아닙니다. 에어비앤비 플랫폼을 통하여 예약된 숙소, 체험, 호스트 서비스에
+        관한 의무와 책임은 해당 서비스를 제공하는 호스트에게 있습니다.
+      </p>
+      <div class="mobile-menu">
+        <button class="mobile_btns">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>둘러보기</span>
+        </button>
+        <button class="mobile_btns">
+          <i class="fa-regular fa-heart"></i>
+          <span>위시 리스트</span>
+        </button>
+        <button class="mobile_btns">
+          <i class="fa-solid fa-circle-user user"></i>
+          <span>로그인</span>
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>

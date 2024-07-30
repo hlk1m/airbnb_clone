@@ -1,0 +1,337 @@
+@use "common" as c;
+
+// mixin
+@mixin button {
+  border: c.$border;
+  border-radius: c.$border-radius-box;
+
+  &:hover {
+    box-shadow: c.$shadow-hover;
+  }
+}
+
+#header {
+  height: auto;
+  border-bottom: c.$border;
+  position: sticky;
+  background-color: c.$color-white;
+  top: 0;
+  z-index: 1000;
+}
+
+// Navbar
+.navbar {
+  @include c.wrapper;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: c.$border;
+  height: 8vh;
+  min-height: 80px;
+
+  .nav_logo {
+    @include c.flex-center;
+    color: c.$color-pink;
+    font-size: 22px;
+    font-weight: bold;
+
+    span {
+      margin-left: c.$space-small;
+    }
+    i {
+      font-size: 38px;
+    }
+  }
+
+  // Date filter buttons
+  .nav_date {
+    @include button();
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    padding: c.$space-middle c.$space-large;
+    box-shadow: c.$shadow-small;
+
+    .nav_date_box {
+      display: flex;
+      .nav_date_box_list {
+        font-size: 15px;
+        font-weight: bold;
+        border-right: c.$border;
+        padding: 0 18px;
+      }
+      .nav_date_box_list:first-child {
+        padding: 0;
+        padding-right: 18px;
+      }
+      .nav_date_box_list:nth-child(3) {
+        border: none;
+        font-weight: 400;
+        margin-right: c.$space-large;
+        color: c.$color-gray;
+      }
+    }
+
+    // galss icon
+    .nav_date_btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: c.$space-small;
+      color: c.$color-white;
+      background-color: c.$color-pink;
+      border-radius: c.$border-radius-circle;
+      width: 32px;
+      height: 32px;
+    }
+    .nav_filter_btn {
+      display: none;
+    }
+
+    .nav_list_mobile {
+      display: none;
+    }
+  }
+
+  // Menu buttons
+  .nav_menu {
+    display: flex;
+
+    .nav_menu_space,
+    .nav_menu_translate {
+      font-size: c.$font-middle;
+      padding: 0 c.$space-default;
+      &:hover {
+        background-color: c.$color-light-gray;
+        border-radius: c.$border-radius-box;
+      }
+    }
+    .nav_menu_user-box {
+      @include button();
+      @include c.flex-center;
+      cursor: pointer;
+      color: c.$color-dark-gray;
+      padding: c.$space-micro c.$space-middle;
+      margin-left: c.$space-middle;
+      gap: c.$space-default;
+      .bar {
+        margin-left: c.$space-micro;
+      }
+      .user {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+// Category filter
+.category {
+  @include c.wrapper;
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  min-height: 80px;
+
+  //ul
+  .category_list {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+
+    // item
+    .category_item {
+      @include c.flex-center;
+      cursor: pointer;
+      height: 100%;
+      width: 100px;
+      flex-direction: column;
+      font-size: 14px;
+      color: c.$color-dark-gray;
+      border-bottom: 4px solid transparent;
+
+      &:hover {
+        border-bottom: 4px solid c.$color-light-gray;
+        color: c.$color-black;
+      }
+
+      .category_item_img {
+        width: 25px;
+      }
+    }
+
+    .selected {
+      border-bottom: 4px solid c.$color-black;
+      &:hover {
+        border-bottom: 4px solid c.$color-black;
+      }
+    }
+  }
+
+  .category_filter {
+    display: flex;
+    align-items: center;
+
+    .category_right_btn {
+      @include button();
+      border: 2px solid c.$color-gray;
+      border-radius: c.$border-radius-circle;
+      width: 30px;
+      height: 30px;
+      box-shadow: none;
+      margin-right: c.$space-large;
+      &:hover {
+        box-shadow: c.$shadow-button;
+      }
+    }
+
+    .category_filter_btn {
+      border: c.$border;
+      border-radius: 12px;
+      padding: c.$space-default;
+      min-width: 80px;
+      i {
+        margin-right: c.$space-middle;
+      }
+    }
+  }
+}
+
+.scroll {
+  min-height: 65px;
+  height: 65px;
+}
+
+// Mobile
+@media screen and (max-width: c.$laptop) {
+  #header {
+    font-size: 14px;
+    .category_list {
+      width: 85%;
+    }
+  }
+}
+@media screen and (max-width: c.$tablet) {
+  .navbar {
+    max-height: 70px;
+    .nav_logo span {
+      display: none;
+    }
+    .nav_menu_space {
+      display: none;
+    }
+  }
+  .category {
+    min-height: 70px;
+  }
+}
+
+@media screen and (max-width: c.$tablet-s) {
+  .category {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 0;
+    width: 100%;
+    justify-content: initial;
+
+    .category_list {
+      overflow: hidden;
+      flex-wrap: wrap;
+      width: 100%;
+      .category_item {
+        width: 90px;
+        padding: 0 c.$space-small;
+        .category_item_img {
+          width: 25px;
+        }
+      }
+    }
+    .category_filter {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: c.$mobile) {
+  #header .navbar {
+    padding-top: c.$space-small;
+    border: none;
+    .nav_logo {
+      display: none;
+      position: relative;
+      width: 85%;
+    }
+    .nav_date {
+      width: 100%;
+      position: initial;
+      transform: none;
+      flex-direction: row-reverse;
+      justify-content: start;
+      align-items: center;
+
+      // galss icon
+      .nav_date_btn {
+        position: initial;
+        transform: translate(-4px, 2px);
+        font-size: 16px;
+        background-color: transparent;
+        color: c.$color-black;
+      }
+      .nav_date_box {
+        flex-direction: column;
+        align-items: baseline;
+
+        .nav_date_box_list {
+          display: none;
+        }
+        .nav_date_box_list:first-child {
+          display: inline-block;
+          border: none;
+          margin: 0;
+        }
+
+        .nav_list_mobile {
+          display: initial;
+          color: c.$color-dark-gray;
+          padding: 0;
+        }
+      }
+
+      // filter button
+      .nav_filter_btn {
+        @include button();
+
+        display: initial;
+        position: absolute;
+        right: 8%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    .nav_menu {
+      display: none;
+    }
+  }
+
+  // category
+  .category {
+    display: flex;
+    justify-content: space-evenly;
+    .category_list {
+      // justify-content: space-evenly;
+      width: 100%;
+
+      .category_item {
+        padding: 0;
+        font-size: 12px;
+        width: 65px;
+      }
+    }
+    .category_filter {
+      display: none;
+    }
+  }
+}

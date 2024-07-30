@@ -1,0 +1,25 @@
+// color
+$color-pink: #ff385c;
+$color-black: #000000;
+$color-dark-gray: #717171;
+$color-gray: #b0b0b0;
+$color-light-gray: #ebebeb;
+$color-white: #ffffff;
+$color-white-transparent: rgba(255, 255, 255, 0.5);
+$color-black-transparent: rgba(0, 0, 0, 0.5);
+
+// box shadow
+$shadow-big: 0 8px 28px rgba(0, 0, 0, 0.28);
+$shadow-button: 0 6px 20px rgba(0, 0, 0, 0.2);
+$shadow-small: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+// space
+$space-small: 5px;
+$space-middle: 10px;
+$space-large: 20px;
+$space-xlarge: 30px;
+
+@use "_reset";
+@use "_header";
+@use "_main";
+@use "_footer";
